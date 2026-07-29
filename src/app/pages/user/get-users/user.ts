@@ -2,10 +2,11 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { UserService } from '../../../services/user-service';
 import { UserResponseType } from '../../../model/user/UserResponseType';
 import { catchError } from 'rxjs';
+import { NothingToShow } from '../../../components/warnings/nothing-to-show/nothing-to-show';
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  imports: [NothingToShow],
   templateUrl: './user.html',
   styleUrl: './user.scss',
 })
@@ -19,7 +20,7 @@ export class User implements OnInit {
     .pipe(
       catchError((err) => {
         console.log(err);
-        throw new err;
+        throw err;
       })
     )
     .subscribe((users) => {

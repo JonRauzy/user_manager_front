@@ -1,5 +1,10 @@
-<ul>
-    @for (user of userList(); track user.id) {
-        <li>{{ user.userName }}</li>
-    }
-</ul>
+@if(userList().length < 1) {
+    <app-nothing-to-show />
+}
+@else {
+    <ul>
+        @for (user of userList(); track user.id) {
+            <li>{{ user.userName }}</li>
+        }
+    </ul>
+}
