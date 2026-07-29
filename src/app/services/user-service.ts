@@ -11,7 +11,7 @@ export class UserService {
         return this.http.get<Array<UserResponseType>>(url);
     }   
 
-    getUsersById(userId : string | null) {
+    getUsersById(userId : string) {
         const url = `http://localhost:8080/api/v1/users/${userId}`;
         return this.http.get<UserResponseType>(url);
     }

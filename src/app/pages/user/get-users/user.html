@@ -4,7 +4,9 @@
 @else {
     <ul>
         @for (user of userList(); track user.id) {
-            <li>{{ user.userName }}</li>
+            <li>
+                <a routerLink="/users/{{ user.id }}">{{ user.userName }}</a>
+            </li>
         }
     </ul>
 }

@@ -2,11 +2,12 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { catchError } from 'rxjs';
 import { UserService } from '../../../services/user-service';
 import { UserResponseType } from '../../../model/user/UserResponseType';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RedirectCommand, RouterLink } from '@angular/router';
+import { NothingToShow } from '../../../components/warnings/nothing-to-show/nothing-to-show';
 
 @Component({
   selector: 'app-get-user-detail',
-  imports: [],
+  imports: [RouterLink, NothingToShow],
   templateUrl: './get-user-detail.html',
   styleUrl: './get-user-detail.scss',
 })

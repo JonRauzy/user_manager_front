@@ -3,10 +3,11 @@ import { UserService } from '../../../services/user-service';
 import { UserResponseType } from '../../../model/user/UserResponseType';
 import { catchError } from 'rxjs';
 import { NothingToShow } from '../../../components/warnings/nothing-to-show/nothing-to-show';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-user',
-  imports: [NothingToShow],
+  imports: [NothingToShow, RouterLink],
   templateUrl: './user.html',
   styleUrl: './user.scss',
 })
