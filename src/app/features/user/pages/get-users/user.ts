@@ -1,19 +1,19 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { UserService } from '../../../services/user-service';
-import { UserResponseType } from '../../../model/user/UserResponseType';
 import { catchError } from 'rxjs';
-import { NothingToShow } from '../../../components/warnings/nothing-to-show/nothing-to-show';
 import { RouterLink } from "@angular/router";
+import { NothingToShow } from '../../../../shared/components/nothing-to-show/nothing-to-show';
+import { UserService } from '../../../../core/services/user.service';
+import { UserResponse } from '../../model/UserResponse';
 
 @Component({
   selector: 'app-user',
-  imports: [NothingToShow, RouterLink],
+  imports: [RouterLink, NothingToShow],
   templateUrl: './user.html',
   styleUrl: './user.scss',
 })
 export class User implements OnInit {
   userService: UserService = inject(UserService);
-  userList= signal<Array<UserResponseType>>([]);
+  userList= signal<Array<UserResponse>>([]);
 
   ngOnInit(): void {
     this.userService

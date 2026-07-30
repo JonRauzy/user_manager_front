@@ -1,9 +1,9 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { catchError } from 'rxjs';
-import { UserService } from '../../../services/user-service';
-import { UserResponseType } from '../../../model/user/UserResponseType';
 import { ActivatedRoute, RedirectCommand, RouterLink } from '@angular/router';
-import { NothingToShow } from '../../../components/warnings/nothing-to-show/nothing-to-show';
+import { NothingToShow } from '../../../../shared/components/nothing-to-show/nothing-to-show';
+import { UserService } from '../../../../core/services/user.service';
+import { UserResponse } from '../../model/UserResponse';
 
 @Component({
   selector: 'app-get-user-detail',
@@ -13,7 +13,7 @@ import { NothingToShow } from '../../../components/warnings/nothing-to-show/noth
 })
 export class GetUserDetail implements OnInit {
   userService: UserService = inject(UserService);
-  user : any = signal<UserResponseType | null>(null);
+  user : any = signal<UserResponse | null>(null);
   route: ActivatedRoute = inject(ActivatedRoute); 
 
   ngOnInit(): void {

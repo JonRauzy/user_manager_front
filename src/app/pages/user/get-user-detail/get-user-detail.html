@@ -1,8 +1,0 @@
-@if (user() == null) {
-    <app-nothing-to-show></app-nothing-to-show>
-}
-@else {
-    <p>{{ user().userName }}</p>
-}
-
-<a routerLink="/users">Back to users list</a>

@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { Home } from './pages/home/home';
-import { User } from './pages/user/get-users/user';
-import { GetUserDetail } from './pages/user/get-user-detail/get-user-detail';
+import { Home } from './features/home/home';
+import { User } from './features/user/pages/get-users/user';
+import { GetUserDetail } from './features/user/pages/get-user-detail/get-user-detail';
+
 
 export const routes: Routes = [
     {
